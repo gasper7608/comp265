@@ -3,7 +3,23 @@ import { View, Text, StyleSheet } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>PACKR Checklist</Text>
+      {/* top title */}
+      <Text style={styles.title}>Travel Bag Packer</Text>
+
+      {/* creating a section for each bag */}
+      <View style={styles.sectionCarryOn}>
+        <Text style={styles.sectionTitle}>Carry-On</Text>
+        <Text>Passport</Text>
+        <Text>Toothbrush</Text>
+        <Text>Charger</Text>
+      </View>
+
+      <View style={styles.sectionSuitcase}>
+        <Text style={styles.sectionTitle}>Suitcase</Text>
+        <Text>Jacket</Text>
+        <Text>Jeans</Text>
+        <Text>Shoes</Text>
+      </View>
     </View>
   );
 }
@@ -18,6 +34,20 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
+  },
+  sectionCarryOn: {
+    backgroundColor: "#f7b6c2",
+    padding: 20,
+    borderRadius: 15,
+    marginTop: 20,
+    width: "90%", // had to look up how to get the % in there
+  },
+  sectionSuitcase: {
+    backgroundColor: "#a8d5e2",
+    padding: 20,
+    borderRadius: 15,
+    marginTop: 15,
+    width: "90%",
   },
 });
 
