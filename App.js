@@ -1,11 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Testing this text</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>PACKR Checklist</Text>
     </View>
   );
 }
@@ -13,8 +11,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#f2f2f2",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
   },
 });
+
