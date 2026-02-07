@@ -1,26 +1,29 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 export default function App() {
   return (
+
     <View style={styles.container}>
       {/* top title */}
       <Text style={styles.title}>Travel Bag Packer</Text>
 
-      {/* creating a section for each bag */}
-      <View style={styles.sectionCarryOn}>
-        <Text style={styles.sectionTitle}>Carry-On</Text>
-        <Text>Passport</Text>
-        <Text>Toothbrush</Text>
-        <Text>Charger</Text>
-      </View>
+      <ScrollView style={{ width: "90%" }}>
+        {/* creating a section for each bag */}
+        <View style={styles.sectionCarryOn}>
+          <Text style={styles.sectionTitle}>Carry-On</Text>
+          <Text>Passport</Text>
+          <Text>Toothbrush</Text>
+          <Text>Charger</Text>
+        </View>
 
-      <View style={styles.sectionSuitcase}>
-        <Text style={styles.sectionTitle}>Suitcase</Text>
-        <Text>Jacket</Text>
-        <Text>Jeans</Text>
-        <Text>Shoes</Text>
-      </View>
-    </View>
+        <View style={styles.sectionSuitcase}>
+          <Text style={styles.sectionTitle}>Suitcase</Text>
+          <Text>Jacket</Text>
+          <Text>Jeans</Text>
+          <Text>Shoes</Text>
+        </View>
+      </ScrollView>
+    </View >
   );
 }
 
