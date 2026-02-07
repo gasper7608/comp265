@@ -1,6 +1,10 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, ScrollView, Switch } from "react-native";
 
 export default function App() {
+  // packed value means true or false, setPacked is how you change answer
+  const [packed1, setPacked1] = useState(false);
+
   return (
 
     <View style={styles.container}>
@@ -12,6 +16,8 @@ export default function App() {
         <View style={styles.sectionCarryOn}>
           <Text style={styles.sectionTitle}>Carry-On</Text>
           <Text>Passport</Text>
+          {/* got some toggle help from https://stackoverflow.com/questions/72828609/how-toggle-works-in-react */}
+            <Switch value={packed1} onValueChange={setPacked1}/>
           <Text>Toothbrush</Text>
           <Text>Charger</Text>
         </View>
@@ -52,5 +58,14 @@ const styles = StyleSheet.create({
     marginTop: 15,
     width: "90%",
   },
-});
 
+  itemRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "white",
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 8,
+  },
+});
