@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, Switch, TextInput, Button, } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   // packed value means true or false, setPacked is how you change answer
@@ -31,6 +32,7 @@ export default function App() {
           <Text>Shoes</Text>
         </View>
       </ScrollView>
+      <Ionicons name="airplane" size={80} color="#2f89e3" style={styles.icon} />
       <View style={styles.addItemContainer}>
         <TextInput style={styles.input} placeholder="Add item" value={newItem} onChangeText={setNewItem} />
         <Button title="Add" onPress={() => { }} />
@@ -45,10 +47,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2f2f2",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 40,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 12,
+    alignSelf: "center",
+    color: "white",
   },
   sectionCarryOn: {
     backgroundColor: "#f7b6c2",
@@ -83,7 +93,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#d4d4d4",
     borderRadius: 8,
-    padding: 8,
+    padding: 20,
     marginRight: 10,
+  },
+  icon: {
+    alignSelf: "center",
+    marginVertical: 20,
   },
 });
