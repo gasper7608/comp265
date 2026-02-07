@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView, Switch } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Switch, TextInput, Button, } from "react-native";
 
 export default function App() {
   // packed value means true or false, setPacked is how you change answer
   const [packed1, setPacked1] = useState(false);
+  // for button at bottom
+  const [newItem, setNewItem] = useState("");
 
   return (
 
@@ -17,7 +19,7 @@ export default function App() {
           <Text style={styles.sectionTitle}>Carry-On</Text>
           <Text>Passport</Text>
           {/* got some toggle help from https://stackoverflow.com/questions/72828609/how-toggle-works-in-react */}
-            <Switch value={packed1} onValueChange={setPacked1}/>
+          <Switch value={packed1} onValueChange={setPacked1} />
           <Text>Toothbrush</Text>
           <Text>Charger</Text>
         </View>
@@ -29,6 +31,10 @@ export default function App() {
           <Text>Shoes</Text>
         </View>
       </ScrollView>
+      <View style={styles.addItemContainer}>
+        <TextInput style={styles.input} placeholder="Add item" value={newItem} onChangeText={setNewItem} />
+        <Button title="Add" onPress={() => { }} />
+      </View>
     </View >
   );
 }
@@ -58,7 +64,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     width: "90%",
   },
-
   itemRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -67,5 +72,18 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginBottom: 8,
+  },
+  addItemContainer: {
+    flexDirection: "row",
+    padding: 10,
+    backgroundColor: "white",
+  },
+  input: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: "#d4d4d4",
+    borderRadius: 8,
+    padding: 8,
+    marginRight: 10,
   },
 });
